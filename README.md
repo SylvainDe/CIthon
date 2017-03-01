@@ -17,3 +17,4 @@ To find relevant repository, one should probably focus on repos that:
   - ... but not the latest nor "nightly"
   - have accepted at least one pull-request in the past
   - have no pending pull-request about the latest Python version
+  - do not have a KO status on CI (to avoid false-positives as much as possible)
