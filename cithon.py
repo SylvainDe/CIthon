@@ -6,17 +6,14 @@
 import github
 import os
 
-client_id = os.getenv('CLIENT_ID')
-client_secret = os.getenv('CLIENT_SECRET')
-g = github.Github(client_id=client_id, client_secret=client_secret)
-
 NEW_PY3_VERSIONS = [b'3.6', b'3.7', b'nightly']
 PY3_VERSIONS = [b'3.2', b'3.3', b'3.4', b'3.5'] + NEW_PY3_VERSIONS
 
 
 def repo_is_candidate(r):
     def log(s):
-        print(str(r) + " " + s)
+        pass
+        # print(str(r) + " " + s)
     if r.fork:
         log("is a fork")
         return False
@@ -47,13 +44,26 @@ def repo_is_candidate(r):
     return True
 
 
-def get_candidates_repos():
-    # for r in g.get_repos():
-    for r in g.search_repositories('python'):
+def get_candidates_repos(github):
+    # for r in github.get_repos():
+    for r in github.search_repositories('python'):
         if repo_is_candidate(r):
             yield r
 
 if __name__ == "__main__":
-    for r in get_candidates_repos():
+    client_id = os.getenv('CLIENT_ID')
+    client_secret = os.getenv('CLIENT_SECRET')
+    login = os.getenv('GITHUB_LOGIN')
+    password = os.getenv('GITHUB_PASSWORD')
+    print("Using '%s'/'%s' // '%s'/'%s'" %
+          (client_id, client_secret, login, password))
+    g = github.Github(
+            client_id=client_id,
+            client_secret=client_secret,
+            login_or_token=login,
+            password=password)
+    u = g.get_user()
+    for r in get_candidates_repos(g):
         print(r, r.html_url, r.language)
+        u.create_fork(r)
         input()
