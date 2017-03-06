@@ -5,6 +5,8 @@
 # http://pygithub.readthedocs.io/en/latest/github_objects/Repository.html#github.Repository.Repository
 import github
 import os
+import itertools
+from subprocess import call
 
 NEW_PY3_VERSIONS = [b'3.6', b'3.7', b'nightly']
 PY3_VERSIONS = [b'3.2', b'3.3', b'3.4', b'3.5'] + NEW_PY3_VERSIONS
@@ -12,8 +14,9 @@ PY3_VERSIONS = [b'3.2', b'3.3', b'3.4', b'3.5'] + NEW_PY3_VERSIONS
 
 def repo_is_candidate(r):
     def log(s):
-        pass
+        # pass
         # print(str(r) + " " + s)
+        print('.', end='', flush=True)
     if r.fork:
         log("is a fork")
         return False
@@ -63,7 +66,12 @@ if __name__ == "__main__":
             login_or_token=login,
             password=password)
     u = g.get_user()
-    for r in get_candidates_repos(g):
+    original_repos = list(u.get_repos())
+    for r in itertools.islice(get_candidates_repos(g), 40):
+        print()
         print(r, r.html_url, r.language)
-        u.create_fork(r)
-        input()
+        f = u.create_fork(r)
+        if f in original_repos:
+            print("%s already forked" % f)
+        else:
+            call(["git", "clone", f.clone_url])
