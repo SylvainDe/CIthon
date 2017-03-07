@@ -1,0 +1,15 @@
+<fake_commit_msg>
+
+The motivation came from reading brettcannon's article : https://snarky.ca/how-to-use-your-project-travis-to-help-test-python-itself/ . Trying to activate the newest Python versions on CI jobs is in most case a win-win situation: if everything works fine, there is nothing to worry about. If an issue is spotted, it is good to know about it to fix it on your side or to open a bug on CPython ( https://bugs.python.org/ ).
+
+Also, if a failures is spotted, you can use the allow_failures option in your matrix build (more information about this in the link above).
+
+Also, nightly and 3.7-dev may be a bit too recent/unstable so I can remove then if need be.
+
+More information about how this PR happened : https://github.com/SylvainDe/CIthon .
+
+More information about the various Python versions available on Travis : https://docs.travis-ci.com/user/languages/python/ .
+
+More information about the Python 3.6 version schedule : https://www.python.org/dev/peps/pep-0494/ .
+More information about the Python 3.7 version schedule : https://www.python.org/dev/peps/pep-0537/ .
+
