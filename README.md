@@ -18,3 +18,10 @@ To find relevant repository, one should probably focus on repos that:
   - have accepted at least one pull-request in the past
   - have no pending pull-request about the latest Python version
   - do not have a KO status on CI (to avoid false-positives as much as possible)
+
+Pull-requests opened:
+
+ - All status: https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+most+recent+Python+versions+in+Travis+CI+%22
+ - Open:       https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+most+recent+Python+versions+in+Travis+CI+%22+is%3Aopen
+ - Merged:     https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+most+recent+Python+versions+in+Travis+CI+%22+is%3Amerged
+ - Rejected:   TODO
