@@ -49,7 +49,7 @@ def repo_is_candidate(r):
 
 def get_candidates_repos(github):
     # for r in github.get_repos():
-    for r in github.search_repositories('python'):
+    for r in github.search_repositories('python', sort='stars', order='desc'):
         if repo_is_candidate(r):
             yield r
 
@@ -67,7 +67,7 @@ if __name__ == "__main__":
             password=password)
     u = g.get_user()
     original_repos = list(u.get_repos())
-    for r in itertools.islice(get_candidates_repos(g), 40):
+    for r in itertools.islice(get_candidates_repos(g), 50):
         print()
         print(r, r.html_url, r.language)
         f = u.create_fork(r)
