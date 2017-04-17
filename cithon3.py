@@ -50,7 +50,7 @@ if __name__ == "__main__":
     client_id = os.getenv('CLIENT_ID', getpass.getuser())
     client_secret = os.getenv('CLIENT_SECRET')
     login = os.getenv('GITHUB_LOGIN', getpass.getuser())
-    password = os.getenv('GITHUB_PASSWORD', getpass.getpass())
+    password = os.getenv('GITHUB_PASSWORD', getpass.getpass(password = getpass('Password for %s: ' % login)))
     print("Using '%s'/'%s' // '%s'/'%s'" % (client_id, client_secret, login,
                                             password))
     gh = github3.login(login, password=password)
