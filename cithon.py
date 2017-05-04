@@ -23,7 +23,12 @@ def repo_is_candidate(r):
     # if r.language != 'Python':
     #     log("is not a Python project (%s)" % r.language)
     #     return False
-    if not r.get_pulls('closed'):
+    prs = r.get_pulls('closed')
+    try:
+        # This may be the best way to detect if a PaginatedList
+        # object is empty
+        pr = prs[0]
+    except IndexError:
         log("has no closed pr")
         return False
     try:
@@ -31,7 +36,7 @@ def repo_is_candidate(r):
     except github.UnknownObjectException:
         log("has no travis file")
         return False
-    decoded_travis = travis_file.decoded_content.lower()
+    decoded_travis = travis_file.decoded_content
     if b'language: python' not in decoded_travis:
         log("has no reference to python in travis file (%s)" % r.language)
         return False
@@ -65,7 +70,7 @@ if __name__ == "__main__":
     u = g.get_user()
     original_repos = list(u.get_repos())
     for r in itertools.islice(get_candidates_repos(g), 50):
-        print('')
+        print()
         print(r, r.html_url, r.language)
         f = u.create_fork(r)
         if f in original_repos:
