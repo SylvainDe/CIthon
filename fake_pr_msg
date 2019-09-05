@@ -32,3 +32,12 @@ Additional words from important Python devs about the importance of testing the 
  - Paul Ganssle:
     https://twitter.com/pganssle/status/1123019315035496453
 
+Additional Travis tips:
+ - to collect more data on the versions being used, you can use:
+```
+before_script:
+- python -VV
+- python -c "import sys; print(sys._git)" || true
+```
+ - to get your code run regularly, you can use Cron Jobs:
+    https://docs.travis-ci.com/user/cron-jobs/
