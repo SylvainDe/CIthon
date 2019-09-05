@@ -1,10 +1,11 @@
 <fake_commit_msg>
 
-The motivation came from reading Brett Cannon's article : https://snarky.ca/how-to-use-your-project-travis-to-help-test-python-itself/ . Trying to activate the newest Python versions on CI jobs is in most case a win-win situation: if everything works fine, there is nothing to worry about. If an issue is spotted, it is good to know about it to fix it on your side or to open a bug on CPython ( https://bugs.python.org/ ).
+The motivation came from reading Brett Cannon's article : https://snarky.ca/how-to-use-your-project-travis-to-help-test-python-itself/ .
+Trying to activate the newest Python versions on CI jobs is in most cases a win-win situation:
+ - if everything works fine, there is nothing to worry about.
+ - if an issue is spotted, it is good to know about it to fix it on your side or to open a bug on CPython ( https://bugs.python.org/ ).
 
-Also, if a failures is spotted, you can use the allow_failures option in your matrix build (more information about this in the link above).
-
-Also, nightly and 3.7-dev may be a bit too recent/unstable so I can remove then if need be.
+Also, if a failure is spotted, you can use the allow_failures option in your matrix build (more information about this in the link above).
 
 More information about how this PR happened : https://github.com/SylvainDe/CIthon .
 
@@ -20,7 +21,7 @@ More information about the Python release schedule:
  - Python 3.7: https://www.python.org/dev/peps/pep-0537/ .
  - Python 3.6: https://www.python.org/dev/peps/pep-0494/ .
 
-Additional words from important Python devs about the importance of testing the version:
+Additional words from important Python devs about the importance of testing the 3.8 version:
  - Guido van Rossum:
     https://twitter.com/gvanrossum/status/1167659428142825474
  - Raymond Hettinger:
