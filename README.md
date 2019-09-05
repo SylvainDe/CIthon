@@ -21,6 +21,13 @@ To find relevant repository, one should probably focus on repos that:
 
 Pull-requests opened:
 
+New batch - "Add Python 3.8 in Travis CI" (September 2019)
+ - All status: https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+Python+3.8+in+Travis+CI%22
+ - Open:       https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+Python+3.8+in+Travis+CI%22+is%3Aopen
+ - Merged:     https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+Python+3.8+in+Travis+CI%22+is%3Amerged
+ - Rejected:   https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+Python+3.8+in+Travis+CI%22+is%3Aclosed+is%3Aunmerged
+
+Original batch - "Add most recent Python versions in Travis CI" (March 2017)
  - All status: https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+most+recent+Python+versions+in+Travis+CI+%22
  - Open:       https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+most+recent+Python+versions+in+Travis+CI+%22+is%3Aopen
  - Merged:     https://github.com/pulls?q=is%3Apr+author%3ASylvainDe+%22Add+most+recent+Python+versions+in+Travis+CI+%22+is%3Amerged
