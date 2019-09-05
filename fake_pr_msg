@@ -1,6 +1,6 @@
 <fake_commit_msg>
 
-The motivation came from reading brettcannon's article : https://snarky.ca/how-to-use-your-project-travis-to-help-test-python-itself/ . Trying to activate the newest Python versions on CI jobs is in most case a win-win situation: if everything works fine, there is nothing to worry about. If an issue is spotted, it is good to know about it to fix it on your side or to open a bug on CPython ( https://bugs.python.org/ ).
+The motivation came from reading Brett Cannon's article : https://snarky.ca/how-to-use-your-project-travis-to-help-test-python-itself/ . Trying to activate the newest Python versions on CI jobs is in most case a win-win situation: if everything works fine, there is nothing to worry about. If an issue is spotted, it is good to know about it to fix it on your side or to open a bug on CPython ( https://bugs.python.org/ ).
 
 Also, if a failures is spotted, you can use the allow_failures option in your matrix build (more information about this in the link above).
 
@@ -8,8 +8,27 @@ Also, nightly and 3.7-dev may be a bit too recent/unstable so I can remove then 
 
 More information about how this PR happened : https://github.com/SylvainDe/CIthon .
 
-More information about the various Python versions available on Travis : https://docs.travis-ci.com/user/languages/python/ .
+More information about the various Python versions available on Travis:
+ - Official documentation:
+    https://docs.travis-ci.com/user/languages/python/ .
+ - Tiny projects to see which Python versions are actually working on Travis:
+    https://travis-ci.org/SylvainDe/ContinuousIntegrationPythonVersions .
 
-More information about the Python 3.6 version schedule : https://www.python.org/dev/peps/pep-0494/ .
-More information about the Python 3.7 version schedule : https://www.python.org/dev/peps/pep-0537/ .
+More information about the Python release schedule:
+ - Python 3.9: https://www.python.org/dev/peps/pep-0596/ .
+ - Python 3.8: https://www.python.org/dev/peps/pep-0569/ .
+ - Python 3.7: https://www.python.org/dev/peps/pep-0537/ .
+ - Python 3.6: https://www.python.org/dev/peps/pep-0494/ .
+
+Additional words from important Python devs about the importance of testing the version:
+ - Guido van Rossum:
+    https://twitter.com/gvanrossum/status/1167659428142825474
+ - Raymond Hettinger:
+    https://twitter.com/raymondh/status/1167459315508113408
+    https://twitter.com/raymondh/status/1153713205245595648
+ - Łukasz Langa:
+    https://twitter.com/llanga/status/1167567333059104768
+    https://twitter.com/llanga/status/1167370321902673920
+ - Paul Ganssle:
+    https://twitter.com/pganssle/status/1123019315035496453
 
