@@ -1,3 +1,4 @@
-Add most recent Python versions in Travis CI
+Add Python 3.8 in Travis CI
 
-Add more recent Python versions including development branches and nightly build.
+Add Python 3.8 in Travis CI to test the last beta
+for 3.8 before the release candidate.
